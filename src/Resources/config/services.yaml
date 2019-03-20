@@ -1,0 +1,26 @@
+services:
+    TBoileau\Bundle\PaginatorBundle\DataTransformer\CollectionToObjectsTransformer: ~
+
+    TBoileau\Bundle\PaginatorBundle\Form\ActionsType:
+        autowire: true
+        tags:
+          - { name: form.type }
+
+    TBoileau\Bundle\PaginatorBundle\Paginator\Paginator:
+        autowire: true
+
+    TBoileau\Bundle\PaginatorBundle\Paginator\PaginatorInterface: '@TBoileau\Bundle\PaginatorBundle\Paginator\Paginator'
+
+    t_boileau.paginator.paginator_builder:
+      class: TBoileau\Bundle\PaginatorBundle\Builder\PaginatorBuilder
+      arguments:
+        -
+
+    TBoileau\Bundle\PaginatorBundle\Builder\PaginatorBuilderInterface: '@t_boileau.paginator.paginator_builder'
+
+    t_boileau.paginator.paginator_factory:
+      class: TBoileau\Bundle\PaginatorBundle\Factory\PaginatorFactory
+      autowire: true
+
+    TBoileau\Bundle\PaginatorBundle\Factory\PaginatorFactoryInterface: '@t_boileau.paginator.paginator_factory'
+
