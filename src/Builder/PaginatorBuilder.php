@@ -45,7 +45,7 @@ class PaginatorBuilder implements PaginatorBuilderInterface
     /**
      * @var Action[]
      */
-    private $actions;
+    private $actions = [];
 
     /**
      * @var ServiceLocator
