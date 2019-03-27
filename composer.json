@@ -1,5 +1,5 @@
 {
-    "version": "1.0.4",
+    "version": "1.0.5-PATCH",
     "name": "tboileau/paginator-bundle",
     "description": "Symfony paginator bundle helps you create and manage paginated collection.",
     "type": "symfony-bundle",
