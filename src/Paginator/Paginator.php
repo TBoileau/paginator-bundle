@@ -129,8 +129,8 @@ class Paginator implements PaginatorInterface
             ->create(
                 ActionsType::class,
                 [
-                    "collection" => array_map(function (User $user) {
-                        return new Item($user);
+                    "collection" => array_map(function ($obj) {
+                        return new Item($obj);
                     }, (array) $this->pager->getIterator())
                 ],
                 [

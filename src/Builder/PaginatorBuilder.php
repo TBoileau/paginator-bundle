@@ -1,19 +1,25 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tboileau
- * Date: 18/03/19
- * Time: 17:12
+
+/*
+ * (c) Thomas Boileau <t-boileau@email.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace TBoileau\Bundle\PaginatorBundle\Builder;
-
 
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use TBoileau\Bundle\PaginatorBundle\Action;
 use TBoileau\Bundle\PaginatorBundle\Filter;
 
+/**
+ * Class PaginatorBuilder
+ *
+ * @package TBoileau\Bundle\PaginatorBundle\Builder
+ * @author Thomas Boileau <t-boileau@email.com>
+ */
 class PaginatorBuilder implements PaginatorBuilderInterface
 {
     /**
@@ -136,7 +142,7 @@ class PaginatorBuilder implements PaginatorBuilderInterface
         string $label
     ): PaginatorBuilderInterface {
         /** @var Action $action */
-        $action = $this->serviceLocator->get($action);
+        $action = clone $this->serviceLocator->get($action);
         $action->setName($name);
         $action->setLabel($label);
 
